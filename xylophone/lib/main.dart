@@ -12,12 +12,12 @@ class XylophoneApp extends StatelessWidget {
     player.play(AssetSource('note$Snumber.wav'));
   }
 
-  void concise(){
-    Expanded(
+  Expanded concise({int n, Color colors}){
+    return Expanded(
       child: FlatButton(
-        color: Colors.red,
+        color: colors,
         onPressed: ()async{
-          Playsound(1);
+          Playsound(n);
         },),
     );
   }
@@ -31,68 +31,76 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                child: FlatButton(
-                  color: Colors.red,
-                onPressed: ()async{
-                  Playsound(1);
-                  // final player= AudioCache();//Creates new player to play local audio
-                  // player.load('note1.wav');
-                },),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.orange,
-                  onPressed: ()async{
-                    Playsound(2);
-                    // final player= AudioCache();//Creates new player to play local audio
-                    // player.load('note1.wav');
-                  },),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.yellow,
-                  onPressed: ()async{
-                    Playsound(3);
-                    // final player= AudioCache();//Creates new player to play local audio
-                    // player.load('note1.wav');
-                  },),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.green,
-                  onPressed: ()async{
-                    Playsound(4);
-                    // final player= AudioCache();//Creates new player to play local audio
-                    // player.load('note1.wav');
-                  },),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue,
-                  onPressed: ()async{
-                    Playsound(5);
-                    // final player= AudioCache();//Creates new player to play local audio
-                    // player.load('note1.wav');
-                  },),
-              ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.indigo,
-                  onPressed: ()async{
-                    Playsound(6);
-                    // final player= AudioCache();//Creates new player to play local audio
-                    // player.load('note1.wav');
-                  },),
-              ),
-              Expanded(child:FlatButton(
-                color: Colors.deepPurpleAccent,
-                onPressed: ()async{
-                  Playsound(7);
-                  // final player= AudioCache();//Creates new player to play local audio
-                  // player.load('note1.wav');
-                },),
-              ),
+              concise(n:1, colors : Colors.red),
+              concise(n:2, colors : Colors.orange),
+              concise(n:3, colors : Colors.yellow),
+              concise(n:4, colors : Colors.green),
+              concise(n:5, colors : Colors.blue),
+              concise(n:6, colors : Colors.indigo),
+              concise(n:7, colors : Colors.deepPurpleAccent),
+
+              // Expanded(
+              //   child: FlatButton(
+              //     color: Colors.red,
+              //   onPressed: ()async{
+              //     Playsound(1);
+              //     // final player= AudioCache();//Creates new player to play local audio
+              //     // player.load('note1.wav');
+              //   },),
+              // ),
+              // Expanded(
+              //   child: FlatButton(
+              //     color: Colors.orange,
+              //     onPressed: ()async{
+              //       Playsound(2);
+              //       // final player= AudioCache();//Creates new player to play local audio
+              //       // player.load('note1.wav');
+              //     },),
+              // ),
+              // Expanded(
+              //   child: FlatButton(
+              //     color: Colors.yellow,
+              //     onPressed: ()async{
+              //       Playsound(3);
+              //       // final player= AudioCache();//Creates new player to play local audio
+              //       // player.load('note1.wav');
+              //     },),
+              // ),
+              // Expanded(
+              //   child: FlatButton(
+              //     color: Colors.green,
+              //     onPressed: ()async{
+              //       Playsound(4);
+              //       // final player= AudioCache();//Creates new player to play local audio
+              //       // player.load('note1.wav');
+              //     },),
+              // ),
+              // Expanded(
+              //   child: FlatButton(
+              //     color: Colors.blue,
+              //     onPressed: ()async{
+              //       Playsound(5);
+              //       // final player= AudioCache();//Creates new player to play local audio
+              //       // player.load('note1.wav');
+              //     },),
+              // ),
+              // Expanded(
+              //   child: FlatButton(
+              //     color: Colors.indigo,
+              //     onPressed: ()async{
+              //       Playsound(6);
+              //       // final player= AudioCache();//Creates new player to play local audio
+              //       // player.load('note1.wav');
+              //     },),
+              // ),
+              // Expanded(child:FlatButton(
+              //   color: Colors.deepPurpleAccent,
+              //   onPressed: ()async{
+              //     Playsound(7);
+              //     // final player= AudioCache();//Creates new player to play local audio
+              //     // player.load('note1.wav');
+              //   },),
+              // ),
             ],
           ),
         ),
