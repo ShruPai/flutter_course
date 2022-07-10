@@ -1,15 +1,100 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+// import 'package:english_words/english_words.dart';
+//import 'package:audioplayers/src/audio_cache.dart';
 
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+
+  void Playsound(int Snumber){
+    final player = AudioPlayer();
+    player.play(AssetSource('note$Snumber.wav'));
+  }
+
+  void concise(){
+    Expanded(
+      child: FlatButton(
+        color: Colors.red,
+        onPressed: ()async{
+          Playsound(1);
+        },),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
-          child: Center(child: Text(nouns.first)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  color: Colors.red,
+                onPressed: ()async{
+                  Playsound(1);
+                  // final player= AudioCache();//Creates new player to play local audio
+                  // player.load('note1.wav');
+                },),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.orange,
+                  onPressed: ()async{
+                    Playsound(2);
+                    // final player= AudioCache();//Creates new player to play local audio
+                    // player.load('note1.wav');
+                  },),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.yellow,
+                  onPressed: ()async{
+                    Playsound(3);
+                    // final player= AudioCache();//Creates new player to play local audio
+                    // player.load('note1.wav');
+                  },),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.green,
+                  onPressed: ()async{
+                    Playsound(4);
+                    // final player= AudioCache();//Creates new player to play local audio
+                    // player.load('note1.wav');
+                  },),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.blue,
+                  onPressed: ()async{
+                    Playsound(5);
+                    // final player= AudioCache();//Creates new player to play local audio
+                    // player.load('note1.wav');
+                  },),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.indigo,
+                  onPressed: ()async{
+                    Playsound(6);
+                    // final player= AudioCache();//Creates new player to play local audio
+                    // player.load('note1.wav');
+                  },),
+              ),
+              Expanded(child:FlatButton(
+                color: Colors.deepPurpleAccent,
+                onPressed: ()async{
+                  Playsound(7);
+                  // final player= AudioCache();//Creates new player to play local audio
+                  // player.load('note1.wav');
+                },),
+              ),
+            ],
+          ),
         ),
       ),
     );
