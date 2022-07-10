@@ -4,10 +4,10 @@ import 'dart:math';
 void main() => runApp(
   MaterialApp(
     home: Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         title: Text('Magic 8 ball'),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.lightBlue,
       ),
       body: Magic8ball(),
     ),
